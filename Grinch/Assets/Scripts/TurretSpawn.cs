@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class TurretSpawn : MonoBehaviour
 {
-
-    public GameObject turretSelect;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -21,11 +18,12 @@ public class TurretSpawn : MonoBehaviour
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            if (Physics.Raycast(ray, out hit, 100.0F))
+            if (Physics.Raycast(ray, out hit, 1000.0F))
             {
                 if(hit.transform != null)
                 {
-                    Instantiate(turretSelect, new Vector3(0,0,0), Quaternion.identity);
+                    print("twoja stara gitara");
+                    Destroy(this.gameObject);
                 }
             }
         }
