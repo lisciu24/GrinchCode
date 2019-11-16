@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Grinch : MonoBehaviour
 {
+    //fifo
+    private bool busy;
+    private Vector3[] targets;
+
     //living
     public short healthPoints = 0;
 

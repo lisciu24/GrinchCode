@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - TurretSpawn
+  - TowerSelect
   layers:
   - Default
   - TransparentFX
@@ -45,9 +46,15 @@ TagManager:
   - name: TurretSpawn
     uniqueID: 353403531
     locked: 0
+  - name: Turret
+    uniqueID: 2822706047
+    locked: 0
   - name: Player
     uniqueID: 2391970435
     locked: 0
   - name: TurretSelect
     uniqueID: 1420731677
+    locked: 0
+  - name: TurretOption
+    uniqueID: 2706838523
     locked: 0
