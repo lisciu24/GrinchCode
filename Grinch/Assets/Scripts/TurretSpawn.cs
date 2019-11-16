@@ -5,13 +5,13 @@ using UnityEngine;
 public class TurretSpawn : MonoBehaviour
 {
     public GameObject turretSelect;
+    public bool busy = false;
     private bool select = false;
     private GameObject instance;
 
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -26,22 +26,27 @@ public class TurretSpawn : MonoBehaviour
             {
                 if (hit.transform != null)
                 {
-                    print("sadsad");
-
-                    if (hit.transform.gameObject.tag == "TurretSpawn")
+                    if (hit.transform.gameObject == this.gameObject)
                     {
-                        if (!select)
+                        if (!transform.parent.gameObject.GetComponent<TurretSpawns>().busy && !busy && !select)
                         {
                             instance = Instantiate(turretSelect);
                             instance.transform.position = hit.transform.position;
+
+                            instance.transform.parent = transform;
                             select = true;
+                            transform.parent.gameObject.GetComponent<TurretSpawns>().busy = true;
                         }
                     }
-                    else
-                    {
-                        select = false;
-                        Destroy(instance);
-                    }
+                }
+            }
+            else
+            {
+                if (select)
+                {
+                    transform.parent.gameObject.GetComponent<TurretSpawns>().busy = false;
+                    select = false;
+                    Destroy(instance);
                 }
             }
         }
