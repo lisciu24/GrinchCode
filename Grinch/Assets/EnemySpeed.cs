@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySpeed : MonoBehaviour
+public class move : MonoBehaviour
 {
     //move
-    public int enemySpeed;
+    public float enemySpeed;
 
     private Transform target;
 
