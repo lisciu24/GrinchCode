@@ -24,14 +24,19 @@ public class TurretSelect : MonoBehaviour
             {
                 if (hit.transform.gameObject == this.gameObject)
                 {
-                    if (!transform.parent.transform.parent.gameObject.GetComponent<TurretSpawn>().busy)
+                    if (turret.GetComponent<Turret>().CanBuy())
                     {
-                        GameObject go = Instantiate(turret);
-                        go.transform.position = transform.parent.position;
+                        if (!transform.parent.transform.parent.gameObject.GetComponent<TurretSpawn>().busy)
+                        {
+                            GameObject go = Instantiate(turret);
+                            go.transform.position = transform.parent.position;
 
-                        transform.parent.transform.parent.gameObject.GetComponent<TurretSpawn>().busy = true;
-                        transform.parent.transform.parent.transform.parent.gameObject.GetComponent<TurretSpawns>().busy = false;
-                        Destroy(transform.parent.gameObject);
+                            turret.GetComponent<Turret>().Buy();
+
+                            transform.parent.transform.parent.gameObject.GetComponent<TurretSpawn>().busy = true;
+                            transform.parent.transform.parent.transform.parent.gameObject.GetComponent<TurretSpawns>().busy = false;
+                            Destroy(transform.parent.gameObject);
+                        }
                     }
                 }
             }

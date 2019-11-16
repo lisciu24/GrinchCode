@@ -4,19 +4,35 @@ using UnityEngine;
 
 public class Turret : MonoBehaviour
 {
-    public float attackDamage = 0F;
-    public float attackSpeed = 0F;
-    public float range = 0F;
+    public short redPresents = 0;
+    public short greenPresents = 0;
+    public short bluePresents = 0;
 
-    // Start is called before the first frame update
-    void Start()
+    public bool CanBuy()
     {
-        
+        bool ret = true;
+
+        Grinch gr = GameObject.FindGameObjectWithTag("Player").GetComponent<Grinch>();
+        if(redPresents > gr.redPresents)
+        {
+            ret = false;
+        }
+        if (greenPresents > gr.greenPresents)
+        {
+            ret = false;
+        }
+        if (bluePresents > gr.bluePresents)
+        {
+            ret = false;
+        }
+
+        return ret;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Buy()
     {
-        
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Grinch>().redPresents -= redPresents;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Grinch>().greenPresents -= greenPresents;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Grinch>().bluePresents -= bluePresents;
     }
 }

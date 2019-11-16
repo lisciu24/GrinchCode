@@ -6,6 +6,8 @@ TagManager:
   tags:
   - TurretSpawn
   - TowerSelect
+  - Choinka
+  - Elf
   layers:
   - Default
   - TransparentFX
@@ -49,6 +51,12 @@ TagManager:
   - name: Turret
     uniqueID: 2822706047
     locked: 0
+  - name: Bullet
+    uniqueID: 2763043089
+    locked: 0
+  - name: Elf
+    uniqueID: 111793311
+    locked: 0
   - name: Player
     uniqueID: 2391970435
     locked: 0
@@ -57,4 +65,7 @@ TagManager:
     locked: 0
   - name: TurretOption
     uniqueID: 2706838523
+    locked: 0
+  - name: Choinka
+    uniqueID: 2794163227
     locked: 0
