@@ -45,9 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1c8d3c334a94914897bec83bbecc571, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  redPresents: 0
-  greenPresents: 0
-  bluePresents: 0
+  redPresents: 8
+  greenPresents: 2
+  bluePresents: 2
 --- !u!1 &1839511809844735692
 GameObject:
   m_ObjectHideFlags: 0
@@ -171,6 +171,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 8
-  attackSpeed: 1
-  range: 5
-  bullet: {fileID: 4555454502345442047, guid: 6042c7f74640deb4f9309e7384c1b9b1, type: 3}
+  attackSpeed: 2
+  range: 6
+  bullet: {fileID: 1742248452433342525, guid: 1c5cdbfcda6d5a34ab31703f41f26dbd, type: 3}

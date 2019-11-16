@@ -62,6 +62,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 111793311
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9de120843cc25b749b4af3ddb4b008dd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d1850bac1c7ab994f99a8a285968978f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -175,6 +176,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 939a014d85248434aade7c85e293ec56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  red: {fileID: 0}
-  green: {fileID: 0}
-  blue: {fileID: 0}
+  red: {fileID: 7701996594446742538, guid: 527d4ee2a863ae043baff2dbd97a9f99, type: 3}
+  green: {fileID: 5684055027478537150, guid: 6e4fdc1ac2408bc409bfb8ad3f38dd1c, type: 3}
+  blue: {fileID: 6185810873085123189, guid: 1faeb8eab50568746b13b8a8deac89fc, type: 3}

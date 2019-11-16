@@ -6,23 +6,17 @@ public class TurretSelect : MonoBehaviour
 {
     public GameObject turret;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            RaycastHit hit;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            if(Physics.Raycast(ray, out hit, 100.0F))
+        if(Physics.Raycast(ray, out hit, 100.0F))
+        {
+            if (hit.transform.gameObject == this.gameObject)
             {
-                if (hit.transform.gameObject == this.gameObject)
+                if (Input.GetMouseButtonDown(0))
                 {
                     if (turret.GetComponent<Turret>().CanBuy())
                     {

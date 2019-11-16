@@ -69,7 +69,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1420731677
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 229cec632a4898d4b9d3ae71cd9ce9d4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -150,7 +150,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1588128773
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7d387055a1b14b445a82fbcd9bd2d06b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -189,6 +189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turret: {fileID: 1513312796984126292, guid: 76072858deae6f74ea5df5786e645510, type: 3}
+  cost: {fileID: 6250693970245363764, guid: c96b9d2096c23984fb6fb5fd52fb1916, type: 3}
 --- !u!1 &2586304540200003098
 GameObject:
   m_ObjectHideFlags: 0
@@ -257,7 +258,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1588128773
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b36f15247363ead4c98776f7774238d5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -296,6 +297,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turret: {fileID: 3647933751456679647, guid: ff6f8d53cf328ec49a65e7efe8b1f9d7, type: 3}
+  cost: {fileID: 6250693970245363764, guid: c96b9d2096c23984fb6fb5fd52fb1916, type: 3}
 --- !u!1 &8538068043102963500
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,7 +366,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1588128773
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: cc9c58488133d694c891ff4f62c3cda0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -403,3 +405,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turret: {fileID: 3653161838682459568, guid: 628b55fec7abcf649949e382284fc090, type: 3}
+  cost: {fileID: 6250693970245363764, guid: c96b9d2096c23984fb6fb5fd52fb1916, type: 3}
