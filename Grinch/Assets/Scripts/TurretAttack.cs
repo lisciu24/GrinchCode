@@ -4,35 +4,53 @@ using UnityEngine;
 
 public class TurretAttack : MonoBehaviour
 {
-    public float attackDamage = 0F;
-    public float attackSpeed = 0.5F;
-    public float range = 0F;
+    public int attackDamage;
+    public float attackSpeed;
+    public float range;
     private float time = 0F;
     public GameObject bullet;
+    bool selected = false;
+    GameObject target;
 
     // Update is called once per frame
     void Update()
     {
         time += Time.deltaTime;
 
-        GameObject[] elfs = GameObject.FindGameObjectsWithTag("Elf");
-        for (int i = 0; i < elfs.Length; i++)
+        if (!selected)
         {
-            if (Vector2.Distance(elfs[i].transform.position, transform.position) <= range)
+            GameObject[] elfs = GameObject.FindGameObjectsWithTag("Elf");
+            for (int i = 0; i < elfs.Length; i++)
             {
-                Vector3 dir = elfs[i].transform.position - transform.position;
-                float angle = (Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg) + 110;
-                transform.rotation = Quaternion.AngleAxis(angle, new Vector3(0, 0, 1));
-
-                if (time >= attackSpeed)
+                if (Vector2.Distance(elfs[i].transform.position, transform.position) <= range)
                 {
-                    {
-                        GameObject go = Instantiate(bullet);
-                        go.transform.position = transform.position;
-                        go.GetComponent<Bullet>().target = elfs[i].gameObject;
-                    }
-                    time = 0F;
+                    target = elfs[i];
+                    selected = true;
                 }
+            }
+        }
+
+        if (selected)
+        {
+            if(target == null || Vector2.Distance(target.transform.position, transform.position) > range)
+            {
+                selected = false;
+                return;
+            }
+
+            Vector3 dir = target.transform.position - transform.position;
+            float angle = (Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg) + 110;
+            transform.rotation = Quaternion.AngleAxis(angle, new Vector3(0, 0, 1));
+
+            if (time >= attackSpeed)
+            {
+                {
+                    GameObject go = Instantiate(bullet);
+                    go.transform.position = transform.position;
+                    go.GetComponent<Bullet>().target = target.transform;
+                    go.GetComponent<Bullet>().damage = attackDamage;
+                }
+                time = 0F;
             }
         }
     }

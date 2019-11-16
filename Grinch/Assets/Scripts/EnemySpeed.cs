@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class move : MonoBehaviour
+public class EnemySpeed : MonoBehaviour
 {
     //move
-    public float speed;
+    public float enemySpeed;
 
     private Transform target;
 
@@ -18,6 +18,6 @@ public class move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, target.position, enemySpeed * Time.deltaTime);
     }
 }
