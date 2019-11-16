@@ -57,6 +57,9 @@ TagManager:
   - name: Elf
     uniqueID: 111793311
     locked: 0
+  - name: Loot
+    uniqueID: 2969970531
+    locked: 0
   - name: Player
     uniqueID: 2391970435
     locked: 0

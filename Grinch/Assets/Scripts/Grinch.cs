@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class Grinch : MonoBehaviour
 {
-    public GameObject end;
-
-    //living
-    public short healthPoints = 0;
-
     //resources
     public short redPresents = 0;
     public short bluePresents = 0;
@@ -18,21 +13,6 @@ public class Grinch : MonoBehaviour
     public bool move = false;
     public float velocity = 0F;
     private Vector3 target;
-
-    //fighting
-    public float attackDamage = 0F;
-    public float attackSpeed = 0F;
-    public float range = 0F;
-
-    public void TakeDamage(short damage)
-    {
-        healthPoints -= damage;
-        if(healthPoints <= 0)
-        {
-            Instantiate(end).transform.position = new Vector3(0, 0, 0);
-            enabled = false;
-        }
-    }
 
     // Start is called before the first frame update
     void Start()

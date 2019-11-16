@@ -4,17 +4,27 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public GameObject target;
-    public float velocity = 0F;
+    public Transform target;
+    public float velocity;
 
-    public float damage = 0F;
+    public int damage;
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, velocity * Time.deltaTime);
-        if(transform.position == target.transform.position)
+        if(target == null)
         {
+            Destroy(this.gameObject);
+            return;
+        }
+        transform.position = Vector3.MoveTowards(transform.position, target.position, velocity * Time.deltaTime);
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject.tag == "Elf")
+        {
+            other.GetComponent<EnemyHealth>().TakeDamage(damage);
             Destroy(this.gameObject);
         }
     }
